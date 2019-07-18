@@ -31,5 +31,19 @@ namespace SmashTacker
             }
 
         }
+
+        public List<Challenger> getItemList()
+        {
+            List<Challenger> mirror = new List<Challenger>(theList.Count);
+
+            foreach (Challenger i in theList)
+            {
+                Challenger item = i;
+                mirror.Add(item);
+            }
+            return mirror;
+
+
+        }
     }
 }

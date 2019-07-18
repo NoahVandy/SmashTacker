@@ -13,6 +13,10 @@ namespace SmashTacker
     public partial class NewChallenger : Form
     {
 
+        public static System.IO.StreamReader sr;
+        public static System.IO.StreamWriter sw;
+
+
         public ChallengerList challengerList = new ChallengerList();
 
         public NewChallenger()
@@ -30,6 +34,19 @@ namespace SmashTacker
             cmbx_main.DataSource = ChallengerArray;
 
 
+
+            sr = new System.IO.StreamReader("SmashTracker.txt");
+
+            while (!sr.EndOfStream)
+            {
+                string line = sr.ReadLine();
+                string[] fileLine = line.Split(',');
+
+                Challenger fileItem = new Challenger(fileLine[0], fileLine[1], int.Parse(fileLine[2]), double.Parse(fileLine[3]));
+
+                challengerList.Add(fileItem);
+            }
+            sr.Close();
         }
 
         private void Txtbx_name_TextChanged(object sender, EventArgs e)
@@ -39,6 +56,9 @@ namespace SmashTacker
 
         private void Btn_add_Click(object sender, EventArgs e)
         {
+
+            
+
             string name = txtbx_name.Text;
             string main = cmbx_main.Text;
             int BP = 0;
@@ -47,6 +67,7 @@ namespace SmashTacker
             Challenger challenger = new Challenger(name, main, BP, KDA);
             //adding it to the List
             bool result = challengerList.Add(challenger);
+
 
 
 
@@ -61,6 +82,20 @@ namespace SmashTacker
             {
                 MessageBox.Show("Error adding");
             }
+
+            sw = new System.IO.StreamWriter("SmashTracker.txt");
+
+            List<Challenger> mirror = challengerList.getItemList();
+
+            MessageBox.Show("Saved successfully");
+
+            foreach (Challenger i in mirror)
+            {
+                sw.WriteLine(i.ToString());
+            }
+
+            sw.Close();
+
 
 
             this.Close();

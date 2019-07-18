@@ -21,7 +21,13 @@ namespace SmashTacker
             this.KDA = KDA;
 
         }
-
+        override
+        public string ToString()
+        {
+            string newString = this.name + "," + this.main + "," + this.BP + "," + this.KDA + ",";
+            return newString;
+        }
 
     }
+   
 }

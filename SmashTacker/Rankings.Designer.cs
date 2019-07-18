@@ -28,21 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgv_rankings = new System.Windows.Forms.DataGridView();
             this.lbl_title = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_rankings)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgv_rankings
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(94, 117);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(613, 302);
-            this.dataGridView1.TabIndex = 0;
+            this.dgv_rankings.AllowUserToAddRows = false;
+            this.dgv_rankings.AllowUserToDeleteRows = false;
+            this.dgv_rankings.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_rankings.Location = new System.Drawing.Point(94, 117);
+            this.dgv_rankings.Name = "dgv_rankings";
+            this.dgv_rankings.ReadOnly = true;
+            this.dgv_rankings.Size = new System.Drawing.Size(613, 302);
+            this.dgv_rankings.TabIndex = 0;
             // 
             // lbl_title
             // 
@@ -60,10 +60,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.lbl_title);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgv_rankings);
             this.Name = "Rankings";
             this.Text = "Rankings";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_rankings)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -71,7 +71,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgv_rankings;
         private System.Windows.Forms.Label lbl_title;
     }
 }
